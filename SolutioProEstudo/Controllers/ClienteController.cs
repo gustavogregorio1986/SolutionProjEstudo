@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SolutioProEstudo.Servico.Servico.Interface;
 
 namespace SolutioProEstudo.Controllers
 {
@@ -7,5 +8,11 @@ namespace SolutioProEstudo.Controllers
     [ApiController]
     public class ClienteController : ControllerBase
     {
+        private readonly IClienteServico _clienteServico;
+
+        public ClienteController(IClienteServico clienteServico)
+        {
+            _clienteServico = clienteServico;
+        }
     }
 }
