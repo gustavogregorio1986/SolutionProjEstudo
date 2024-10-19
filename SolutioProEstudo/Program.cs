@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SolutioProEstudo.Data.AutoMapper;
 using SolutioProEstudo.Data.Contexto;
 using SolutioProEstudo.Data.Repository;
 using SolutioProEstudo.Data.Repository.Inetrface;
@@ -14,6 +15,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<SolutioProjEstudoContxto>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 builder.Services.AddScoped<IEmpresaRepository, EmpresaRepository>();
