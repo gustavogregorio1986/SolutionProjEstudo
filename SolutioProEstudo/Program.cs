@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using SolutioProEstudo.Data.Contexto;
+using SolutioProEstudo.Data.Repository;
+using SolutioProEstudo.Data.Repository.Inetrface;
+using SolutioProEstudo.Servico.Servico;
+using SolutioProEstudo.Servico.Servico.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +14,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<SolutioProjEstudoContxto>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+builder.Services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+
+builder.Services.AddScoped<IClienteServico, ClienteServico>();
+builder.Services.AddScoped<IEmpresaServico, EmpresaServico>();
+builder.Services.AddScoped<IFuncionarioServico, FuncionarioServico>();
 
 var app = builder.Build();
 
