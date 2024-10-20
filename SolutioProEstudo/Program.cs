@@ -26,6 +26,17 @@ builder.Services.AddScoped<IClienteServico, ClienteServico>();
 builder.Services.AddScoped<IEmpresaServico, EmpresaServico>();
 builder.Services.AddScoped<IFuncionarioServico, FuncionarioServico>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
+        {
+            builder.WithOrigins("https://localhost:7283/")  // Substitua pela URL permitida
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

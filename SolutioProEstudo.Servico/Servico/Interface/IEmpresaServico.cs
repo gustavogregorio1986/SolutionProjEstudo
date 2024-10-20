@@ -11,6 +11,6 @@ namespace SolutioProEstudo.Servico.Servico.Interface
     {
         void AdicionarEmpresa(Empresa empresa);
 
-        List<Cliente> ListarEmpresas();
+        List<Empresa> ListarEmpresas();
     }
 }

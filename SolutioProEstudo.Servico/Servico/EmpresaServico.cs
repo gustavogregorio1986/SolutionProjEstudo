@@ -23,7 +23,7 @@ namespace SolutioProEstudo.Servico.Servico
             _empresaRepository.AdicionarEmpresa(empresa);
         }
 
-        public List<Cliente> ListarEmpresas()
+        public List<Empresa> ListarEmpresas()
         {
             return _empresaRepository.ListarEmpresas();
         }
