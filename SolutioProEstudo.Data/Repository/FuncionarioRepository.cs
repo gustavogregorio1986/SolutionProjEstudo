@@ -20,7 +20,7 @@ namespace SolutioProEstudo.Data.Repository
 
         public void AdicionarFuncionario(Funcionario funcionario)
         {
-            _db.Funcionarios.Add(funcionario);
+            _db.Add(funcionario);
             _db.SaveChanges();
         }
 

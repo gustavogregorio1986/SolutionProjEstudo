@@ -20,7 +20,7 @@ namespace SolutioProEstudo.Data.Repository
 
         public void AdicionarEmpresa(Empresa empresa)
         {
-            _db.Empresas.Add(empresa);
+            _db.Add(empresa);
             _db.SaveChanges();
         }
 

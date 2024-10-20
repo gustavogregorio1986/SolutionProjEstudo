@@ -20,7 +20,7 @@ namespace SolutioProEstudo.Data.Repository
 
         public void AdicionarCliente(Cliente cliente)
         {
-            _db.Clientes.Add(cliente);
+            _db .Add(cliente);
             _db.SaveChanges();
         }
 

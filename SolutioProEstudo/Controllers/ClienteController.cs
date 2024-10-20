@@ -24,9 +24,9 @@ namespace SolutioProEstudo.Controllers
             try
             {
                 ClienteDTO clienteDTO = new ClienteDTO();
-                cliente.NomeCliente = clienteDTO.NomeCliente;
-                cliente.Setor = clienteDTO.Setor;
-                cliente.Tipo = clienteDTO.Tipo;
+                clienteDTO.NomeCliente = cliente.NomeCliente;
+                clienteDTO.Setor = cliente.Setor;
+                clienteDTO.Tipo = cliente.Tipo;
 
                 _clienteServico.AdicionarCliente(cliente);
             }
